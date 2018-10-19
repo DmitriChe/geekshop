@@ -1,0 +1,256 @@
+@font-face {
+    font-family: "Ryuk Extra Regular";
+    src: url('../fonts/Ryuk_Extra_Regular.ttf')
+}
+
+html {
+    height: 100%;
+   	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+40,2989d8+51,207cca+59,207cca+82,7db9e8+100 */
+	background: #1e5799; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #1e5799 0%, #2989d8 40%, #2989d8 51%, #207cca 59%, #207cca 82%, #7db9e8 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #1e5799 0%,#2989d8 40%,#2989d8 51%,#207cca 59%,#207cca 82%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #1e5799 0%,#2989d8 40%,#2989d8 51%,#207cca 59%,#207cca 82%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+div.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+div.header {
+    height: 100px;
+    position: relative;
+    background-image: url('../images/bg_header2.png');
+}
+
+.header img {
+    width: 100px;
+    margin-left: 30px;
+    border: 4px dotted black;
+    border-radius: 20px;
+}
+
+div.footer {
+    height: 60px;
+    background-color: rgba(125, 162, 240, 0.5);
+    position: relative;
+}
+
+div.footer > span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+h1 {
+    font-family: "Ryuk Extra Regular", sans-serif;
+    font-size: 30px;
+}
+
+ul.menu {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+ul.menu li {
+    display: inline;
+    margin: 0 10px;
+}
+
+ul.menu a{
+    text-decoration: none;
+    color: rgb(10, 227, 235);
+    font-family: Arial, Helvetica, sans-serif;
+    font-variant: small-caps;
+    font-size: 20px;
+}
+
+ul.menu a:hover {
+    color: rgb(248, 7, 196);
+}
+
+.prod-descr, .prod-param, .prod-detail {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #eaeaea;
+}
+
+.prod-descr + p {
+    color: #484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.prod-detail + p {
+    font-size: 14px;
+    color: #707070;
+    font-style: italic;
+    line-height: 16px; 
+}
+
+.prod-param + ul {
+    color: rgb(72, 78, 128);
+    font-style: normal;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    line-height: 40px;
+    list-style-type: none;
+}
+
+.prod-param + ul li {
+    padding: 0 0 0 25px;
+    background-image: url(../images/check.png);
+    background-size: 20px;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+input, textarea {
+    width: 200px;
+    height: 20px;
+    color: rgb(70, 35, 90);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: capitalize;
+}
+
+input[type="email"]:focus {
+    background-color: rgb(255, 210, 210);
+    color: rgb(241, 76, 0)
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type="submit"] {
+    width: 200px;
+    height: 40px;
+    color: rgb(56, 32, 95);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+div.prod-img {
+    float: left;
+    margin: 10px 20px 10px 0;
+}
+
+.prod-param {
+    clear: both;
+}
+
+div.prod-img img {
+    border: 10px double rgb(207, 170, 4);
+    border-radius: 90px;
+    box-shadow: 10px 10px 10px rgb(39, 1, 141);
+    transform: rotate(10deg);
+}
+
+div.prod-img img:hover {
+    border: none;
+    margin: 10px;
+}
+
+a.buy {
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    background-color: rgb(209, 250, 26);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    line-height: 40px;
+    margin: 25px 0 0 280px;
+}
+
+a.buy:hover {
+    background-color: red;
+}
+
+a.buy:active {
+    background-color: yellow;
+}
+
+h1.catalog + ul {
+    list-style-type: none; 
+    color: rgb(74, 33, 94);
+}
+
+h1.catalog + ul a {
+    text-decoration: none;
+    color: rgb(74, 33, 94);
+    font-family: "Ryuk Extra Regular", sans-serif;
+    font-size: 26px;
+}
+
+h1.catalog + ul a:hover {
+    font-weight: bold;
+    color: rgb(212, 10, 212);   
+}
+
+h1.catalog + ul a img{
+    border: dashed 10px rgb(0, 162, 255);
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px black;
+    width: 120px;
+    height: 100px;
+}
+
+h1.catalog + ul a img:hover{
+    border: dashed 10px rgb(227, 252, 3);
+    box-shadow: 3px 3px 3px black;
+    transform: rotate(10deg)
+}
+
+ul.catalog-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+ul.catalog-menu span {
+    display: block;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+caption {
+    border: 2px solid #000;
+    border-width: 2px 2px 0 2px;
+}
+
+td, th {
+    border: 2px solid #000;
+}
+
+thead tr {
+    height: 30px;
+}
+
+th, td:nth-of-type(n + 3) {
+    text-align: center;
+}
+
+p.first_letter::first-letter {
+    font-family: "Ryuk Extra Regular", sans-serif;
+    font-size: 30px;
+    color: rgb(247, 169, 1);
+}
