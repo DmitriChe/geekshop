@@ -6,103 +6,27 @@
     {% endblock%}
 
     {% block page_content %}
-        <h1 class="catalog">Каталог товаров</h1>
+        <h1 class="catalog">{{ pagename|title }}</h1>
         <ul class="catalog-menu">
-            <li>
+            {% for item in products %}
+            <!-- <li>
                 <div class="catalog-item">
                     <a href="/bicycle/">
                         <img src="{% static 'images/bicycle.jpg' %}" alt="велосипед" title="велосипед"><br>
                         <span>Велосипед</span><br><br>
                     </a>
                 </div>
-            </li>
+            </li> -->
+
             <li>
                 <div class="catalog-item">
-                    <a href="/car/">
-                        <img src="{% static 'images/car.jpg' %}" alt="автомобиль" title="автомобиль"><br>
-                        <span>Автомобиль</span><br><br>
+                    <a href="/{{ item.0 }}/">
+                        <img src="{{ item.1 }}" alt="{{ item.2 }}" title="{{ item.2 }}"><br>
+                        <span>{{ item.2|title }}</span><br><br>
                     </a>
                 </div>
             </li>
-            <li>
-                <div class="catalog-item">
-                    <a href="/helicopter/">
-                        <img src="{% static 'images/helicopter.jpg' %}" alt="вертолет" title="вертолет"><br>
-                        <span>Вертолет</span><br><br>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="catalog-item">
-                    <a href="/airplane/">
-                        <img src="{% static 'images/airplane.jpg' %}" alt="самолет" title="самолет"><br>
-                        <span>Самолет</span><br><br>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="catalog-item">
-                    <a href="/bicycle/">
-                        <img src="{% static 'images/bicycle.jpg' %}" alt="велосипед" title="велосипед"><br>
-                        <span>Велосипед</span><br><br>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="catalog-item">
-                    <a href="/car/">
-                        <img src="{% static 'images/car.jpg' %}" alt="автомобиль" title="автомобиль"><br>
-                        <span>Автомобиль</span><br><br>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="catalog-item">
-                    <a href="/helicopter/">
-                        <img src="{% static 'images/helicopter.jpg' %}" alt="вертолет" title="вертолет"><br>
-                        <span>Вертолет</span><br><br>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="catalog-item">
-                    <a href="/airplane/">
-                        <img src="{% static 'images/airplane.jpg' %}" alt="самолет" title="самолет"><br>
-                        <span>Самолет</span><br><br>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="catalog-item">
-                    <a href="/bicycle/">
-                        <img src="{% static 'images/bicycle.jpg' %}" alt="велосипед" title="велосипед"><br>
-                        <span>Велосипед</span><br><br>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="catalog-item">
-                    <a href="/car/">
-                        <img src="{% static 'images/car.jpg' %}" alt="автомобиль" title="автомобиль"><br>
-                        <span>Автомобиль</span><br><br>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="catalog-item">
-                    <a href="/helicopter/">
-                        <img src="{% static 'images/helicopter.jpg' %}" alt="вертолет" title="вертолет"><br>
-                        <span>Вертолет</span><br><br>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="catalog-item">
-                    <a href="/airplane/">
-                        <img src="{% static 'images/airplane.jpg' %}" alt="самолет" title="самолет"><br>
-                        <span>Самолет</span><br><br>
-                    </a>
-                </div>
-            </li>
+            {% endfor %}
+           
         </ul>
     {% endblock %}
