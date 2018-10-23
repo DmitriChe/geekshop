@@ -18,6 +18,16 @@ def products(request):
             ['car', '/static/images/car.jpg', 'автомобиль'],
             ['helicopter', '/static/images/helicopter.jpg', 'вертолёт'],
             ['airplane', '/static/images/airplane.jpg', 'самолёт'],
+            ['bicycle', '/static/images/bicycle.jpg','велосипед'],
+            ['car', '/static/images/car.jpg', 'автомобиль'],
+            ['helicopter', '/static/images/helicopter.jpg', 'вертолёт'],
+            ['airplane', '/static/images/airplane.jpg', 'самолёт'],
+            ['bicycle', '/static/images/bicycle.jpg','велосипед'],
+            ['car', '/static/images/car.jpg', 'автомобиль'],
+            ['helicopter', '/static/images/helicopter.jpg', 'вертолёт'],
+            ['airplane', '/static/images/airplane.jpg', 'самолёт'],
+            ['helicopter', '/static/images/helicopter.jpg', 'вертолёт'],
+            ['airplane', '/static/images/airplane.jpg', 'самолёт'],
         ]
     }
     response_string = render_to_string('mainapp/pages/catalog.html', context)
