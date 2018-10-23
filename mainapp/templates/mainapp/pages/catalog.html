@@ -1,130 +1,108 @@
-<!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <title>Каталог мобильных товаров</title>
-        <link rel="stylesheet" href="/static/css/style.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <div class="logo">
-                    <a href="/">
-                        <img src="/static/images/logo.jpg" alt="логотип магазина чудо-машин" title="логотип магазина чудо-машин">
+{% extends 'mainapp/master.html' %}
+{% load staticfiles %}
+
+    {% block page_title %}
+        Каталог мобильных товаров
+    {% endblock%}
+
+    {% block page_content %}
+        <h1 class="catalog">Каталог товаров</h1>
+        <ul class="catalog-menu">
+            <li>
+                <div class="catalog-item">
+                    <a href="/bicycle/">
+                        <img src="{% static 'images/bicycle.jpg' %}" alt="велосипед" title="велосипед"><br>
+                        <span>Велосипед</span><br><br>
                     </a>
                 </div>
-                <ul class="menu">
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="#">Каталог</a></li>
-                    <li><a href="/contacts/">Контакты</a></li>
-                </ul>
-            </div>
-            <hr>
-            <h1 class="catalog">Каталог товаров</h1>
-            <ul class="catalog-menu">
-                <li>
-                    <div class="catalog-item">
-                        <a href="/bicycle/">
-                            <img src="/static/images/bicycle.jpg" alt="велосипед" title="велосипед"><br>
-                            <span>Велосипед</span><br><br>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="catalog-item">
-                        <a href="/car/">
-                            <img src="/static/images/car.jpg" alt="автомобиль" title="автомобиль"><br>
-                            <span>Автомобиль</span><br><br>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="catalog-item">
-                        <a href="/helicopter/">
-                            <img src="/static/images/helicopter.jpg" alt="вертолет" title="вертолет"><br>
-                            <span>Вертолет</span><br><br>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="catalog-item">
-                        <a href="/airplane/">
-                            <img src="/static/images/airplane.jpg" alt="самолет" title="самолет"><br>
-                            <span>Самолет</span><br><br>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="catalog-item">
-                        <a href="/bicycle/">
-                            <img src="/static/images/bicycle.jpg" alt="велосипед" title="велосипед"><br>
-                            <span>Велосипед</span><br><br>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="catalog-item">
-                        <a href="/car/">
-                            <img src="/static/images/car.jpg" alt="автомобиль" title="автомобиль"><br>
-                            <span>Автомобиль</span><br><br>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="catalog-item">
-                        <a href="/helicopter/">
-                            <img src="/static/images/helicopter.jpg" alt="вертолет" title="вертолет"><br>
-                            <span>Вертолет</span><br><br>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="catalog-item">
-                        <a href="/airplane/">
-                            <img src="/static/images/airplane.jpg" alt="самолет" title="самолет"><br>
-                            <span>Самолет</span><br><br>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="catalog-item">
-                        <a href="/bicycle/">
-                            <img src="/static/images/bicycle.jpg" alt="велосипед" title="велосипед"><br>
-                            <span>Велосипед</span><br><br>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="catalog-item">
-                        <a href="/car/">
-                            <img src="/static/images/car.jpg" alt="автомобиль" title="автомобиль"><br>
-                            <span>Автомобиль</span><br><br>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="catalog-item">
-                        <a href="/helicopter/">
-                            <img src="/static/images/helicopter.jpg" alt="вертолет" title="вертолет"><br>
-                            <span>Вертолет</span><br><br>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="catalog-item">
-                        <a href="/airplane/">
-                            <img src="/static/images/airplane.jpg" alt="самолет" title="самолет"><br>
-                            <span>Самолет</span><br><br>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-            <hr>
-            <div class="footer">
-                <span>
-                    &copy;"Все права надежно защищены:))"
-                </span>
-            </div>
-        </div>
-    </body>
-</html>
+            </li>
+            <li>
+                <div class="catalog-item">
+                    <a href="/car/">
+                        <img src="{% static 'images/car.jpg' %}" alt="автомобиль" title="автомобиль"><br>
+                        <span>Автомобиль</span><br><br>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="catalog-item">
+                    <a href="/helicopter/">
+                        <img src="{% static 'images/helicopter.jpg' %}" alt="вертолет" title="вертолет"><br>
+                        <span>Вертолет</span><br><br>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="catalog-item">
+                    <a href="/airplane/">
+                        <img src="{% static 'images/airplane.jpg' %}" alt="самолет" title="самолет"><br>
+                        <span>Самолет</span><br><br>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="catalog-item">
+                    <a href="/bicycle/">
+                        <img src="{% static 'images/bicycle.jpg' %}" alt="велосипед" title="велосипед"><br>
+                        <span>Велосипед</span><br><br>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="catalog-item">
+                    <a href="/car/">
+                        <img src="{% static 'images/car.jpg' %}" alt="автомобиль" title="автомобиль"><br>
+                        <span>Автомобиль</span><br><br>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="catalog-item">
+                    <a href="/helicopter/">
+                        <img src="{% static 'images/helicopter.jpg' %}" alt="вертолет" title="вертолет"><br>
+                        <span>Вертолет</span><br><br>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="catalog-item">
+                    <a href="/airplane/">
+                        <img src="{% static 'images/airplane.jpg' %}" alt="самолет" title="самолет"><br>
+                        <span>Самолет</span><br><br>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="catalog-item">
+                    <a href="/bicycle/">
+                        <img src="{% static 'images/bicycle.jpg' %}" alt="велосипед" title="велосипед"><br>
+                        <span>Велосипед</span><br><br>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="catalog-item">
+                    <a href="/car/">
+                        <img src="{% static 'images/car.jpg' %}" alt="автомобиль" title="автомобиль"><br>
+                        <span>Автомобиль</span><br><br>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="catalog-item">
+                    <a href="/helicopter/">
+                        <img src="{% static 'images/helicopter.jpg' %}" alt="вертолет" title="вертолет"><br>
+                        <span>Вертолет</span><br><br>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="catalog-item">
+                    <a href="/airplane/">
+                        <img src="{% static 'images/airplane.jpg' %}" alt="самолет" title="самолет"><br>
+                        <span>Самолет</span><br><br>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    {% endblock %}

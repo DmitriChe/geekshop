@@ -1,53 +1,31 @@
-<!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <title>Контакты</title>
-        <link rel="stylesheet" href="/static/css/style.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <div class="logo">
-                    <a href="/">
-                        <img src="/static/images/logo.jpg" alt="логотип магазина чудо-машин" title="логотип магазина чудо-машин">
-                    </a>
-                </div>
-                <ul class="menu">
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="/products/">Каталог</a></li>
-                    <li><a href="#">Контакты</a></li>
-                </ul>
-            </div>
-            <hr>
-            <h1>Контакты</h1>
-            <fieldset>
-                <legend><b><i>Напишите нам!</i></b></legend>
-                <form action="contacts.html" method="get">
-                    <label for="name"><b>Ваше имя</b></label><br>
-                    <input type="text" id="name" name="name" placeholder="Имя" required><br>
-                    <label for="email"><b>E-mail</b></label><br>
-                    <input type="email" id="email" name="email" placeholder="email@mail.ru" required><br>
-                    <label for="theme"><b>Тема сообщения</b></label><br>
-                    <input type="text" id="theme" name="theme" placeholder="Тема сообщения" required><br>
-                    <label for="message"><b>Сообщение</b></label><br>
-                    <textarea id="message" name="message" rows="10" cols="22" placeholder="Введите сообщение" required></textarea><br>
-                    <input type="submit" value="Отправить!">
-                </form>
-            </fieldset>
+{% extends 'mainapp/master.html' %}
+{% load staticfiles %}
 
-            <h2>Адрес</h2>
-            <p><b>адрес:</b> <i>г.&nbsp;Москва, пл.&nbsp;Победы, д.&nbsp;1, корп.&nbsp;945, домофон:&nbsp;090545</i></p>
-            <p><b>E-mail:</b> <i>dvigmash@yandex.ru</i></p>
-            <script
-                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5d68e133a9a6a6e569ef0cd23afdb0ca23c3441d0f42f2a5e4d5e787dc00702a&amp;width=100%&amp;height=374&amp;lang=ru_RU&amp;scroll=true">
-            </script>
-            <hr>
-            <div class="footer">
-                <span>
-                    &copy; "Все права надежно защищены:))"
-                </span>
-            </div>
-        </div>
-    </body>
-</html>
+    {% block page_title %}
+        Контакты
+    {% endblock%}
+
+    {% block page_content %}
+        <h1>Контакты</h1>
+        <fieldset>
+            <legend><b><i>Напишите нам!</i></b></legend>
+            <form action="contacts.html" method="get">
+                <label for="name"><b>Ваше имя</b></label><br>
+                <input type="text" id="name" name="name" placeholder="Имя" required><br>
+                <label for="email"><b>E-mail</b></label><br>
+                <input type="email" id="email" name="email" placeholder="email@mail.ru" required><br>
+                <label for="theme"><b>Тема сообщения</b></label><br>
+                <input type="text" id="theme" name="theme" placeholder="Тема сообщения" required><br>
+                <label for="message"><b>Сообщение</b></label><br>
+                <textarea id="message" name="message" rows="10" cols="22" placeholder="Введите сообщение" required></textarea><br>
+                <input type="submit" value="Отправить!">
+            </form>
+        </fieldset>
+
+        <h2>Адрес</h2>
+        <p><b>адрес:</b> <i>г.&nbsp;Москва, пл.&nbsp;Победы, д.&nbsp;1, корп.&nbsp;945, домофон:&nbsp;090545</i></p>
+        <p><b>E-mail:</b> <i>dvigmash@yandex.ru</i></p>
+        <script
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5d68e133a9a6a6e569ef0cd23afdb0ca23c3441d0f42f2a5e4d5e787dc00702a&amp;width=100%&amp;height=374&amp;lang=ru_RU&amp;scroll=true">
+        </script>
+    {% endblock%}

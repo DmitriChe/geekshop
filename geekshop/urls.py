@@ -19,12 +19,12 @@ from django.conf.urls import url
 import mainapp.views as mainapp
 
 urlpatterns = [
-    url(r'^$', mainapp.main),
-    url(r'^products/', mainapp.products),
-    url(r'^contacts/', mainapp.contacts),
-    url(r'^bicycle/', mainapp.bicycle),
-    url(r'^car/', mainapp.car),
-    url(r'^helicopter/', mainapp.helicopter),
-    url(r'^airplane/', mainapp.airplane),
+    url(r'^$', mainapp.main, name='main'),
+    url(r'^products/', mainapp.products, name='products'),
+    url(r'^contacts/', mainapp.contacts, name='contacts'),
+    url(r'^bicycle/', mainapp.bicycle, name='bicycle'),
+    url(r'^car/', mainapp.car, name='car'),
+    url(r'^helicopter/', mainapp.helicopter, name='helicopter'),
+    url(r'^airplane/', mainapp.airplane, name='airplane'),
     path('admin/', admin.site.urls),
 ]
