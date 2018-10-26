@@ -5,9 +5,16 @@ from django.template.loader import get_template, render_to_string
 
 # Create your views here.
 from django.shortcuts import render
+from .models import ProductCategory, Product
 
 def main(request):
-    return render(request, 'mainapp/index.html')
+    title = 'главная'
+    products = Product.objects.all()[:4]
+    content = {'title': title, 'products': products}
+    return render(request, 'mainapp/index.html', content)
+
+# def main(request):
+#     return render(request, 'mainapp/index.html')
 
 def products(request):
     # return render(request, 'mainapp/pages/catalog.html')
