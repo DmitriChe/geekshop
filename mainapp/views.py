@@ -7,15 +7,6 @@ from django.template.loader import get_template, render_to_string
 from django.shortcuts import render
 from mainapp.models import ProductCategory, Product
 
-
-# def main(request):
-#     template = Template(
-#         '''
-#         'HELLO, {{ name }}!'
-
-#         '''
-#     )
-
 # НА ГЛАВНУЮ страницу выводит данные из БД, но мне нужно не на главную, а в каталог.
 def main(request):
     title = 'главная'
@@ -34,11 +25,11 @@ def main(request):
 #     return render(request, 'mainapp/index.html', content)
 
 # ВАРИАНТ 2 - не работает, хотя я указываю тот шаблон, куда мне нужно выводить данные mainapp/pages/catalog.html
-# def products(request):
-#     title = 'главная'
-#     products = Product.objects.all()[:]
-#     content = {'title': title, 'products': products}
-#     return render(request, 'mainapp/pages/catalog.html', content)
+def products(request):
+    title = 'главная'
+    products = Product.objects.all()[:]
+    content = {'title': title, 'products': products}
+    return render(request, 'mainapp/pages/catalog.html', content)
 
 # ВАРИАНТ 3 - так тоже не работает... - не знаю почему
 # def products(request):
@@ -50,30 +41,30 @@ def main(request):
 
 
 # ВАРИАНТ 4 - а так работает, понятно почему
-def products(request):
-    ## return render(request, 'mainapp/pages/catalog.html')
+# def products(request):
+#     ## return render(request, 'mainapp/pages/catalog.html')
 
-    context = {
-        'pagename' : 'каталог товаров',
-        'products' : [
-            {'href': 'bicycle', 'src': 'images/bicycle.jpg', 'info': 'велосипед'},
-            {'href': 'car', 'src': 'images/car.jpg', 'info': 'автомобиль'},
-            {'href': 'helicopter', 'src': 'images/helicopter.jpg', 'info': 'вертолёт'},
-            {'href': 'airplane', 'src': 'images/airplane.jpg', 'info': 'самолёт'},
-            {'href': 'bicycle', 'src': 'images/bicycle.jpg', 'info': 'велосипед'},
-            {'href': 'car', 'src': 'images/car.jpg', 'info': 'автомобиль'},
-            {'href': 'helicopter', 'src': 'images/helicopter.jpg', 'info': 'вертолёт'},
-            {'href': 'airplane', 'src': 'images/airplane.jpg', 'info': 'самолёт'},
-            {'href': 'bicycle', 'src': 'images/bicycle.jpg', 'info': 'велосипед'},
-            {'href': 'car', 'src': 'images/car.jpg', 'info': 'автомобиль'},
-            {'href': 'helicopter', 'src': 'images/helicopter.jpg', 'info': 'вертолёт'},
-            {'href': 'airplane', 'src': 'images/airplane.jpg', 'info': 'самолёт'},
-            {'href': 'helicopter', 'src': 'images/helicopter.jpg', 'info': 'вертолёт'},
-            {'href': 'airplane', 'src': 'images/airplane.jpg', 'info': 'самолёт'},
-        ]
-    }
-    response_string = render_to_string('mainapp/pages/catalog.html', context)
-    return HttpResponse(response_string)
+#     context = {
+#         'pagename' : 'каталог товаров',
+#         'products' : [
+#             {'href': 'bicycle', 'src': 'images/bicycle.jpg', 'info': 'велосипед'},
+#             {'href': 'car', 'src': 'images/car.jpg', 'info': 'автомобиль'},
+#             {'href': 'helicopter', 'src': 'images/helicopter.jpg', 'info': 'вертолёт'},
+#             {'href': 'airplane', 'src': 'images/airplane.jpg', 'info': 'самолёт'},
+#             {'href': 'bicycle', 'src': 'images/bicycle.jpg', 'info': 'велосипед'},
+#             {'href': 'car', 'src': 'images/car.jpg', 'info': 'автомобиль'},
+#             {'href': 'helicopter', 'src': 'images/helicopter.jpg', 'info': 'вертолёт'},
+#             {'href': 'airplane', 'src': 'images/airplane.jpg', 'info': 'самолёт'},
+#             {'href': 'bicycle', 'src': 'images/bicycle.jpg', 'info': 'велосипед'},
+#             {'href': 'car', 'src': 'images/car.jpg', 'info': 'автомобиль'},
+#             {'href': 'helicopter', 'src': 'images/helicopter.jpg', 'info': 'вертолёт'},
+#             {'href': 'airplane', 'src': 'images/airplane.jpg', 'info': 'самолёт'},
+#             {'href': 'helicopter', 'src': 'images/helicopter.jpg', 'info': 'вертолёт'},
+#             {'href': 'airplane', 'src': 'images/airplane.jpg', 'info': 'самолёт'},
+#         ]
+#     }
+#     response_string = render_to_string('mainapp/pages/catalog.html', context)
+#     return HttpResponse(response_string)
 
 def contacts(request):
     return render(request, 'mainapp/pages/contacts.html')

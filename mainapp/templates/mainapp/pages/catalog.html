@@ -7,7 +7,7 @@
 
     {% block page_content %}
         <!-- Код для данных из переменной products в контроллере -->
-        <h1 class="catalog">{{ pagename|title }}</h1>
+        <!-- <h1 class="catalog">{{ pagename|title }}</h1>
         
         <ul class="catalog-menu">
             {% for product in products %}
@@ -20,10 +20,10 @@
                 </div>
             </li>
             {% endfor %}
-        </ul>
+        </ul> -->
         
         <!-- код для данных из БД -->
-        <!-- {% for product in products %}
+        {% for product in products %}
             <div class ="block">
                 <a href ="#">
                     <img src ="/media/{{ product.image }}" alt ="{{ product.short_desc }}">
@@ -34,7 +34,7 @@
                     </div>
                 </a>
             </div>
-        {% endfor %} -->
+        {% endfor %}
 
 
     {% endblock %}
