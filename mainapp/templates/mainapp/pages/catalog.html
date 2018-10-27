@@ -13,6 +13,7 @@
                 <div class="catalog-item">
                     <a href="/bicycle/">
                         <img src="{% static 'images/bicycle.jpg' %}" alt="велосипед" title="велосипед"><br>
+                        <img src="{{ item.1 }}" alt="{{ item.2 }}" title="{{ item.2 }}"><br>
                         <span>Велосипед</span><br><br>
                     </a>
                 </div>
@@ -20,9 +21,9 @@
 
             <li>
                 <div class="catalog-item">
-                    <a href="/{{ item.0 }}/">
-                        <img src="{{ item.1 }}" alt="{{ item.2 }}" title="{{ item.2 }}"><br>
-                        <span>{{ item.2|title }}</span><br><br>
+                    <a href="{% url item.href %}">
+                        <img src="{% static item.src %}" alt="{{ item.info }}" title="{{ item.info }}"><br>
+                        <span>{{ item.info|title }}</span><br><br>
                     </a>
                 </div>
             </li>

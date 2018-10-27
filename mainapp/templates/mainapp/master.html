@@ -5,9 +5,14 @@
         <meta charset="UTF-8">
         <title>
             {% block page_title %}
-            {% endblock%}
+            {% endblock %}
         </title>
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        {% block css %}
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        {% endblock %}
+       
+        {% block js %}
+        {% endblock %}
     </head>
     <body>
         <div class="container">
@@ -17,17 +22,25 @@
                         <img src="{% static 'images/logo.jpg' %}" alt="логотип магазина чудо-машин" title="логотип магазина чудо-машин">
                     </a>
                 </div>
+                <!-- Подключение подшаблона меню -->
                 {% include 'mainapp/includes/mainmenu.html' %}
             </div>
             <hr>
+            
+            {% block menu %}
+            {% endblock %}
+            
             {% block page_content %}
             {% endblock %}
-            <hr>
-            <div class="footer">
-                <span>
-                    &copy; "Все права надежно защищены:))"
-                </span>
-            </div>
+
+            {% block footer %}
+                <hr>
+                <div class="footer">
+                    <span>
+                        &copy; "Все права надежно защищены:))"
+                    </span>
+                </div>
+            {% endblock %}
         </div>
     </body>
 </html>

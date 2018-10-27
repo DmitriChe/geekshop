@@ -7,34 +7,44 @@ from django.template.loader import get_template, render_to_string
 from django.shortcuts import render
 from .models import ProductCategory, Product
 
-def main(request):
-    title = 'главная'
-    products = Product.objects.all()[:4]
-    content = {'title': title, 'products': products}
-    return render(request, 'mainapp/index.html', content)
 
 # def main(request):
-#     return render(request, 'mainapp/index.html')
+#     template = Template(
+#         '''
+#         'HELLO, {{ name }}!'
+
+#         '''
+#     )
+
+
+# def main(request):
+#     title = 'главная'
+#     products = Product.objects.all()[:4]
+#     content = {'title': title, 'products': products}
+#     return render(request, 'mainapp/index.html', content)
+
+def main(request):
+    return render(request, 'mainapp/index.html')
 
 def products(request):
     # return render(request, 'mainapp/pages/catalog.html')
     context = {
         'pagename' : 'каталог товаров',
         'products' : [
-            ['bicycle', '/static/images/bicycle.jpg','велосипед'],
-            ['car', '/static/images/car.jpg', 'автомобиль'],
-            ['helicopter', '/static/images/helicopter.jpg', 'вертолёт'],
-            ['airplane', '/static/images/airplane.jpg', 'самолёт'],
-            ['bicycle', '/static/images/bicycle.jpg','велосипед'],
-            ['car', '/static/images/car.jpg', 'автомобиль'],
-            ['helicopter', '/static/images/helicopter.jpg', 'вертолёт'],
-            ['airplane', '/static/images/airplane.jpg', 'самолёт'],
-            ['bicycle', '/static/images/bicycle.jpg','велосипед'],
-            ['car', '/static/images/car.jpg', 'автомобиль'],
-            ['helicopter', '/static/images/helicopter.jpg', 'вертолёт'],
-            ['airplane', '/static/images/airplane.jpg', 'самолёт'],
-            ['helicopter', '/static/images/helicopter.jpg', 'вертолёт'],
-            ['airplane', '/static/images/airplane.jpg', 'самолёт'],
+            {'href': 'bicycle', 'src': 'images/bicycle.jpg', 'info': 'велосипед'},
+            {'href': 'car', 'src': 'images/car.jpg', 'info': 'автомобиль'},
+            {'href': 'helicopter', 'src': 'images/helicopter.jpg', 'info': 'вертолёт'},
+            {'href': 'airplane', 'src': 'images/airplane.jpg', 'info': 'самолёт'},
+            {'href': 'bicycle', 'src': 'images/bicycle.jpg', 'info': 'велосипед'},
+            {'href': 'car', 'src': 'images/car.jpg', 'info': 'автомобиль'},
+            {'href': 'helicopter', 'src': 'images/helicopter.jpg', 'info': 'вертолёт'},
+            {'href': 'airplane', 'src': 'images/airplane.jpg', 'info': 'самолёт'},
+            {'href': 'bicycle', 'src': 'images/bicycle.jpg', 'info': 'велосипед'},
+            {'href': 'car', 'src': 'images/car.jpg', 'info': 'автомобиль'},
+            {'href': 'helicopter', 'src': 'images/helicopter.jpg', 'info': 'вертолёт'},
+            {'href': 'airplane', 'src': 'images/airplane.jpg', 'info': 'самолёт'},
+            {'href': 'helicopter', 'src': 'images/helicopter.jpg', 'info': 'вертолёт'},
+            {'href': 'airplane', 'src': 'images/airplane.jpg', 'info': 'самолёт'},
         ]
     }
     response_string = render_to_string('mainapp/pages/catalog.html', context)
