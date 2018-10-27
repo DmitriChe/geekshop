@@ -6,8 +6,23 @@
     {% endblock %}
 
     {% block page_content %}
+        <!-- Код для данных из переменной products в контроллере -->
         <h1 class="catalog">{{ pagename|title }}</h1>
-
+        
+        <ul class="catalog-menu">
+            {% for product in products %}
+            <li>
+                <div class="catalog-item">
+                    <a href="{% url product.href %}">
+                        <img src="{% static product.src %}" alt="{{ product.info }}" title="{{ product.info }}"><br>
+                        <span>{{ product.info|title }}</span><br><br>
+                    </a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        
+        <!-- код для данных из БД -->
         <!-- {% for product in products %}
             <div class ="block">
                 <a href ="#">
@@ -21,16 +36,5 @@
             </div>
         {% endfor %} -->
 
-        <ul class="catalog-menu">
-            {% for product in products %}
-            <li>
-                <div class="catalog-item">
-                    <a href="{% url product.href %}">
-                        <img src="{% static product.src %}" alt="{{ product.info }}" title="{{ product.info }}"><br>
-                        <span>{{ product.info|title }}</span><br><br>
-                    </a>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
+
     {% endblock %}
