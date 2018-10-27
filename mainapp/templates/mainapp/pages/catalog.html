@@ -3,31 +3,34 @@
 
     {% block page_title %}
         Каталог мобильных товаров
-    {% endblock%}
+    {% endblock %}
 
     {% block page_content %}
         <h1 class="catalog">{{ pagename|title }}</h1>
-        <ul class="catalog-menu">
-            {% for item in products %}
-            <!-- <li>
-                <div class="catalog-item">
-                    <a href="/bicycle/">
-                        <img src="{% static 'images/bicycle.jpg' %}" alt="велосипед" title="велосипед"><br>
-                        <img src="{{ item.1 }}" alt="{{ item.2 }}" title="{{ item.2 }}"><br>
-                        <span>Велосипед</span><br><br>
-                    </a>
-                </div>
-            </li> -->
 
+        <!-- {% for product in products %}
+            <div class ="block">
+                <a href ="#">
+                    <img src ="/media/{{ product.image }}" alt ="{{ product.short_desc }}">
+                    <div class =" text ">
+                        <h3 >{{ product.category.name }}</h3>
+                        <h4 >{{ product.name }}</h4>
+                        <p >{{ product.description }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %} -->
+
+        <ul class="catalog-menu">
+            {% for product in products %}
             <li>
                 <div class="catalog-item">
-                    <a href="{% url item.href %}">
-                        <img src="{% static item.src %}" alt="{{ item.info }}" title="{{ item.info }}"><br>
-                        <span>{{ item.info|title }}</span><br><br>
+                    <a href="{% url product.href %}">
+                        <img src="{% static product.src %}" alt="{{ product.info }}" title="{{ product.info }}"><br>
+                        <span>{{ product.info|title }}</span><br><br>
                     </a>
                 </div>
             </li>
             {% endfor %}
-           
         </ul>
     {% endblock %}

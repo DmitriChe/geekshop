@@ -25,6 +25,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^$', mainapp.main, name='main'),
     url(r'^products/', mainapp.products, name='products'),
+    # url( r'^products/' , include( 'mainapp.urls' , namespace='products')),
     url(r'^contacts/', mainapp.contacts, name='contacts'),
     url(r'^bicycle/', mainapp.bicycle, name='bicycle'),
     url(r'^car/', mainapp.car, name='car'),
@@ -33,5 +34,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
+# делаем папку MEDIA_ROOT доступной по сетевому адресу MEDIA_URL
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
