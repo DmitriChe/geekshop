@@ -6,8 +6,11 @@
     {% endblock %}
 
     {% block page_content %}
-        <!-- Код для данных из переменной products в контроллере -->
-        <!-- <h1 class="catalog">{{ pagename|title }}</h1>
+
+
+        {# Код для данных из переменной products в контроллере #}
+        {% comment %}
+        <h1 class="catalog">{{ pagename|title }}</h1>
         
         <ul class="catalog-menu">
             {% for product in products %}
@@ -20,21 +23,27 @@
                 </div>
             </li>
             {% endfor %}
-        </ul> -->
-        
-        <!-- код для данных из БД -->
-        {% for product in products %}
-            <div class ="block">
-                <a href ="#">
-                    <img src ="/media/{{ product.image }}" alt ="{{ product.short_desc }}">
-                    <div class =" text ">
-                        <h3 >{{ product.category.name }}</h3>
-                        <h4 >{{ product.name }}</h4>
-                        <p >{{ product.description }}</p>
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
+        </ul>
+        {% endcomment %}
 
+
+        <h1 class="catalog">{{ title|title }}</h1>
+        
+        <ul class="catalog-menu">
+            {# код для данных из БД #}
+            {% for category in catalog %}
+
+            <li>
+                <div class="catalog-item">
+                    <a href="{% url 'main' %}">
+                        <img src="{{ category.image.url }}" alt="{{ category.name }}" title="{{ category.name }}"><br>
+                        <h3>{{ category.category.name }}</h3>
+                        <p>{{ category.description }}</p><br><br>
+                    </a>
+                </div>
+            </li>
+
+            {% endfor %}
+        </ul>
 
     {% endblock %}

@@ -8,17 +8,4 @@
     {% block page_content %}
         <h1>Магазин подвижной техники</h1>
         <p>Добро пожаловать в уникальный магазин подвижной техники!</p>
-
-        {% for product in products %}
-            <div class ="block">
-                <a href ="#">
-                    <img src ="/media/{{ product.image }}" alt ="{{ product.short_desc }}">
-                    <div class =" text ">
-                        <h3 >{{ product.category.name }}</h3>
-                        <h4 >{{ product.name }}</h4>
-                        <p >{{ product.description }}</p>
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
     {% endblock %}

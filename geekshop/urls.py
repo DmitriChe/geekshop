@@ -24,6 +24,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', mainapp.main, name='main'),
+    url(r'^catalog/', mainapp.catalog, name='catalog'),
     url(r'^products/', mainapp.products, name='products'),
     # url( r'^products/' , include( 'mainapp.urls' , namespace='products')),
     url(r'^contacts/', mainapp.contacts, name='contacts'),
