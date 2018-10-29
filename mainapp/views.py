@@ -9,11 +9,7 @@ from mainapp.models import ProductCategory, Product
 
 # НА ГЛАВНУЮ страницу выводит данные из БД, но мне нужно не на главную, а в каталог.
 def main(request):
-    title = 'главная'
-    products = Product.objects.all()[:]
-    content = {'title': title, 'products': products}
-    return render(request, 'mainapp/index.html', content)
-    # return render(request, 'mainapp/index.html')
+    return render(request, 'mainapp/index.html')
 
 def catalog(request):
     title = 'Каталог мобильных товаров'
