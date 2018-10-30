@@ -26,14 +26,30 @@ def products(request):
 def contacts(request):
     return render(request, 'mainapp/pages/contacts.html')
 
+def bicycles(request):
+    return render(request, 'mainapp/pages/bicycle.html')
+
+def cars(request):
+    return render(request, 'mainapp/pages/car.html')
+
+def helicopters(request):
+    return render(request, 'mainapp/pages/helicopter.html')
+    
+def airplanes(request):
+    return render(request, 'mainapp/pages/airplane.html')
+
+
 def bicycle(request):
     return render(request, 'mainapp/pages/bicycle.html')
+
 
 def car(request):
     return render(request, 'mainapp/pages/car.html')
 
+
 def helicopter(request):
     return render(request, 'mainapp/pages/helicopter.html')
-    
+
+
 def airplane(request):
     return render(request, 'mainapp/pages/airplane.html')

@@ -3,8 +3,7 @@ from django.db import models
 # Create your models here.
 class ProductCategory(models.Model):
     name = models.CharField(verbose_name='имя', max_length=64, unique=True)
-    # linkname = models.CharField(verbose_name='ссылка', max_length=64, blank=True)
-    # pathname = models.CharField(verbose_name='путь', max_length=64, blank=True)
+    linkname = models.CharField(verbose_name='ссылка', max_length=64, blank=True)
     image = models.ImageField(upload_to='category_images', blank=True)
     description = models.TextField(verbose_name='описание', blank=True)
 

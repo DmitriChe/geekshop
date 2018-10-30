@@ -28,9 +28,13 @@ urlpatterns = [
     url(r'^products/', mainapp.products, name='products'),
     # url( r'^products/' , include( 'mainapp.urls' , namespace='products')),
     url(r'^contacts/', mainapp.contacts, name='contacts'),
+    url(r'^bicycles/', mainapp.bicycles, name='bicycles'),
     url(r'^bicycle/', mainapp.bicycle, name='bicycle'),
+    url(r'^cars/', mainapp.cars, name='cars'),
     url(r'^car/', mainapp.car, name='car'),
+    url(r'^helicopters/', mainapp.helicopters, name='helicopters'),
     url(r'^helicopter/', mainapp.helicopter, name='helicopter'),
+    url(r'^airplanes/', mainapp.airplanes, name='airplanes'),
     url(r'^airplane/', mainapp.airplane, name='airplane'),
     path('admin/', admin.site.urls),
 ]
