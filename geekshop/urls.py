@@ -37,7 +37,7 @@ urlpatterns = [
     url(r'^helicopter/', mainapp.helicopter, name='helicopter'),
     url(r'^airplanes/', mainapp.airplanes, name='airplanes'),
     url(r'^airplane/', mainapp.airplane, name='airplane'),
-    url(r'^auth/', include('authapp.urls', namespace=None)),
+    url(r'^auth/', include(('authapp.urls', 'auth'), namespace='auth')),
     # url( r'^admin/' , admin.site.urls),
     path('admin/', admin.site.urls),
 ]
