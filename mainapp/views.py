@@ -17,11 +17,11 @@ def catalog(request):
     content = {'title': title, 'catalog': catalog}
     return render(request, 'mainapp/pages/catalog.html', content)
 
-def products(request):
-    title = 'Каталог мобильных товаров'
-    products = Product.objects.all()[:]
-    content = {'title': title, 'products': products}
-    return render(request, 'mainapp/pages/catalog.html', content)
+# def products(request):
+#     title = 'Каталог мобильных товаров'
+#     products = Product.objects.all()[:]
+#     content = {'title': title, 'products': products}
+#     return render(request, 'mainapp/pages/catalog.html', content)
 
 def contacts(request):
     return render(request, 'mainapp/pages/contacts.html')

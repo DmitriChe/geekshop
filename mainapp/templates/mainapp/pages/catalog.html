@@ -1,49 +1,28 @@
 {% extends 'mainapp/master.html' %}
 {% load staticfiles %}
 
-    {% block page_title %}
-        Каталог мобильных товаров
-    {% endblock %}
+{% block page_title %}
+    Каталог мобильных товаров
+{% endblock %}
 
-    {% block page_content %}
+{% block page_content %}
+    <h1 class="catalog">{{ title|title }}</h1>
 
+    <ul class="catalog-menu">
+        {# код для данных из БД #}
+        {% for category in catalog %}
 
-        {# Код для данных из переменной products в контроллере #}
-        {% comment %}
-        <h1 class="catalog">{{ pagename|title }}</h1>
-        
-        <ul class="catalog-menu">
-            {% for product in products %}
-            <li>
-                <div class="catalog-item">
-                    <a href="{% url product.href %}">
-                        <img src="{% static product.src %}" alt="{{ product.info }}" title="{{ product.info }}"><br>
-                        <span>{{ product.info|title }}</span><br><br>
-                    </a>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
-        {% endcomment %}
+        <li>
+            <div class="catalog-item">
+                <a href="{% url category.linkname %}">
+                    <img src="{{ category.image.url }}" alt="{{ category.name }}" title="{{ category.name }}"><br>
+                    <h3>{{ category.category.name }}</h3>
+                    <p>{{ category.description }}</p><br><br>
+                </a>
+            </div>
+        </li>
 
+        {% endfor %}
+    </ul>
 
-        <h1 class="catalog">{{ title|title }}</h1>
-        
-        <ul class="catalog-menu">
-            {# код для данных из БД #}
-            {% for category in catalog %}
-
-            <li>
-                <div class="catalog-item">
-                    <a href="{% url category.linkname %}">
-                        <img src="{{ category.image.url }}" alt="{{ category.name }}" title="{{ category.name }}"><br>
-                        <h3>{{ category.category.name }}</h3>
-                        <p>{{ category.description }}</p><br><br>
-                    </a>
-                </div>
-            </li>
-
-            {% endfor %}
-        </ul>
-
-    {% endblock %}
+{% endblock %}
