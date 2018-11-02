@@ -42,13 +42,16 @@ def catalog(request, pk=None):
 
 
     same_products = Product.objects.all()[3: 5]
-
+    # Добавил, чтобы выводились товары даже когда не указана категория
+    products = Product.objects.all().order_by('price')
     message = 'не указан номер категории!'
     content = {
         'title': title,
         'links_menu': links_menu,
         'same_products': same_products,
         'message': message,
+        # Добавил, чтобы выводились товары даже когда не указана категория
+        'products': products
     }
     return render(request, 'mainapp/pages/catalog.html', content)
 
