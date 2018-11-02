@@ -201,7 +201,7 @@ h1.catalog + ul a:hover {
     color: rgb(212, 10, 212);   
 }
 
-h1.catalog + ul a img{
+.catalog-item img{
     border: dashed 10px rgb(0, 162, 255);
     border-radius: 5px;
     box-shadow: 5px 5px 20px black;
@@ -209,7 +209,7 @@ h1.catalog + ul a img{
     height: 110px;
 }
 
-h1.catalog + ul a img:hover{
+.catalog-item img:hover{
     border: dashed 10px rgb(227, 252, 3);
     box-shadow: 3px 3px 3px black;
     transform: rotate(10deg)
