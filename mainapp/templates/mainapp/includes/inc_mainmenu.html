@@ -1,6 +1,21 @@
 <ul class="menu">
     <li><a href="{% url 'main' %}">Главная</a></li>
+
+    {# Старая сылка на каталог#}
     <li><a href="{% url 'catalog:index' %}">Каталог</a></li>
+
+    {% comment %}
+    {# Новая сылка на каталог#}
+    <li>
+        <a href="{% url 'catalog:index' %}"
+           class="{% if request.resolver_match.namespace=='catalog' %}
+                       active
+                   {% endif %}">
+            Каталог
+        </a>
+    </li>
+    {% endcomment %}
+
     <li><a href="{% url 'contacts' %}">Контакты</a></li>
 
 

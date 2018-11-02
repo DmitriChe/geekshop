@@ -17,15 +17,18 @@ def catalog(request, pk=None):
     print(pk)
 
     title = 'Каталог мобильных товаров'
+    # Импортируем из модель ProductCategory все категории в links_menu
     links_menu = ProductCategory.objects.all()
     # catalog = ProductCategory.objects.all()[:]
-
 
     if pk:
         if pk == '0':
             category = {'name': 'все'}
+            message = 'pk = 0'
+            # получаем в переменную products из модели Product все товары
             products = Product.objects.all().order_by('price')
         else:
+            message = 'pk != 0'
             category = get_object_or_404(ProductCategory, pk=pk)
             products = Product.objects.filter(category__pk=pk).order_by('price')
         content = {
@@ -33,16 +36,19 @@ def catalog(request, pk=None):
             'links_menu': links_menu,
             'category': category,
             'products': products,
+            'message': message,
         }
-
         return render(request, 'mainapp/pages/products_list.html', content)
+
 
     same_products = Product.objects.all()[3: 5]
 
+    message = 'не указан номер категории!'
     content = {
         'title': title,
         'links_menu': links_menu,
-        'same_products': same_products
+        'same_products': same_products,
+        'message': message,
     }
     return render(request, 'mainapp/pages/catalog.html', content)
 
