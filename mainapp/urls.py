@@ -5,7 +5,5 @@ app_name = 'catalog'
 
 urlpatterns = [
     url(r'^$', mainapp.catalog, name='index'),
-    # url(r'^(\d+)/$', mainapp.catalog, name='category'),
-    # url( паттерн, контроллер, шаблон? )
-    url(r'^catalog/(?P<pk>\d+)/$', mainapp.catalog, name='catalog'),
+    url(r'^(?P<pk>\d+)/$', mainapp.catalog, name='catalog'),
 ]
