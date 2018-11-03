@@ -13,7 +13,7 @@ def main(request):
     return render(request, 'mainapp/index.html')
 
 
-def catalog(request, pk=None):
+def products_list(request, pk=None):
     print(pk)
 
     title = 'Каталог мобильных товаров'
@@ -53,7 +53,7 @@ def catalog(request, pk=None):
         # Добавил, чтобы выводились товары даже когда не указана категория
         'products': products
     }
-    return render(request, 'mainapp/pages/catalog.html', content)
+    return render(request, 'mainapp/pages/products_list.html', content)
 
 
 # def catalog(request, pk=None):

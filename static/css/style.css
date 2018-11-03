@@ -138,16 +138,11 @@ input[type="submit"] {
     font-size: 20px;
 }
 
-div.prod-img {
-    float: left;
+.prod-img {
     margin: 10px 20px 10px 0;
 }
 
-.prod-param {
-    clear: both;
-}
-
-div.prod-img img {
+.prod-img img {
     width: 300px;
     border: 10px double rgb(207, 170, 4);
     border-radius: 90px;
@@ -155,7 +150,7 @@ div.prod-img img {
     transform: rotate(10deg);
 }
 
-div.prod-img img:hover {
+.prod-img img:hover {
     border: none;
     margin: 10px;
 }
@@ -201,6 +196,26 @@ h1.catalog + ul a:hover {
     color: rgb(212, 10, 212);   
 }
 
+.catalog-menu {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog-menu li{
+    display: block;
+    max-width: 150px;
+}
+
+.catalog-menu span {
+    display: block;
+    text-align: center;
+}
+
+.catalog-item {
+
+}
+
 .catalog-item img{
     border: dashed 10px rgb(0, 162, 255);
     border-radius: 5px;
@@ -215,36 +230,23 @@ h1.catalog + ul a:hover {
     transform: rotate(10deg)
 }
 
-ul.catalog-menu {
-    padding: 0;
-    /* overflow: hidden; */
+.list-item img{
+    border: dashed 10px rgb(0, 162, 255);
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px black;
+    width: 200px;
 }
 
-div.header:after,
-ul.catalog-menu:after {
+.list-item img:hover{
+    border: dashed 10px rgb(227, 252, 3);
+    box-shadow: 3px 3px 3px black;
+    transform: rotate(10deg)
+}
+
+div.header:after {
     content: '';
     clear: both;
     display: block;
-}
-
-ul.catalog-menu li{
-    display: block;
-    float: none;
-    height: 170px;
-    margin-right: 133px;
-}
-
-ul.catalog-menu li:nth-child(n + 5) {
-    margin-top: 40px;
-}
-
-ul.catalog-menu li:nth-child(4n) {
-    margin-right: 0;
-}
-
-ul.catalog-menu span {
-    display: block;
-    text-align: center;
 }
 
 table {
