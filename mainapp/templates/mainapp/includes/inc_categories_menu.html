@@ -29,12 +29,10 @@
     {% for category in links_menu %}
         <li>
             <div class="catalog-item">
-                <a href="{% url 'main' %}">
+                <a href="{% url 'catalog:catalog' pk=category.pk %}">
                     <h3>{{ category.name }}</h3>
                     <img src="{{ category.image.url }}" alt="{{ category.name }}" title="{{ category.name }}"><br>
                     <p>{{ category.description }}</p><br><br>
-                    <p>{% url 'main' %}</p>
-                    <p>{% url 'main' %}</p>
                 </a>
             </div>
         </li>
