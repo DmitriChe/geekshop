@@ -14,7 +14,11 @@
     <div class="products_list">
         <div class="title clearfix">
             <h2>
+            {% if category.name %}
                 Категория: "{{ category.name|title }}"
+            {% else %}
+                Все товары каталога:
+            {% endif %}
             </h2>
         </div>
         <div class="category-products clearfix">
