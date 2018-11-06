@@ -11,10 +11,10 @@
         {% for link in links_menu %}
             <li>
                 <a href="{% url 'catalog:catalog' category.pk %}"
-                    class="{% if request.resolver_match.kwargs.pk|add:'0'==link.pk %}
+                    class="{% if request.resolver_match.kwargs.pk|add:'0'==category.pk %}
                                 active
                             {% endif %}">
-                    {{ link.name }}
+                    {{ category.name }}
                 </a>
             </li>
         {% endfor %}
