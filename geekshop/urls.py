@@ -25,8 +25,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', mainapp.main, name='main'),
-    # url(r'^catalog/', mainapp.catalog, name='catalog'),
-    # url(r'^products/', mainapp.products, name='products'),
+    url(r'^basket/', include(('basketapp.urls', 'basket'), namespace='basket')),
     url(r'^catalog/', include(('mainapp.urls', 'catalog'), namespace='catalog')),
     url(r'^contacts/', mainapp.contacts, name='contacts'),
     url(r'^bicycle/', mainapp.bicycle, name='bicycle'),
@@ -34,7 +33,7 @@ urlpatterns = [
     url(r'^helicopter/', mainapp.helicopter, name='helicopter'),
     url(r'^airplane/', mainapp.airplane, name='airplane'),
     url(r'^auth/', include(('authapp.urls', 'auth'), namespace='auth')),
-    # url( r'^admin/' , admin.site.urls),
+    # url(r'^admin/', admin.site.urls),
     path('admin/', admin.site.urls),
 ]
 
