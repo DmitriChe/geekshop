@@ -28,11 +28,24 @@
     {% endif %}
     <li>
         {% if user.is_authenticated %}
-            <a href= "{% url 'auth:logout' %}" >выйти</a>
+            <a href= "{% url 'auth:logout' %}">выйти</a>
         {% else %}
-            <a href= "{% url 'auth:login' %}" >войти</a>
+            <a href= "{% url 'auth:login' %}">войти</a>
         {% endif %}
     </li>
-
-
 </ul>
+<div>
+    <ul class="menu add">
+        <li><a href="#" class="search">Поиск</a></li>
+        <li>
+            <a href="{% url 'basket:view' %}" class="basket">
+                    <span>
+                        Корзина:
+                        {% if basket %}
+                            {{ basket|length }}
+                        {% endif %}
+                    </span>
+            </a>
+        </li>
+    </ul>
+</div>
