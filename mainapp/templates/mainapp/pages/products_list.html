@@ -24,8 +24,8 @@
         <div class="category-products clearfix">
             {% for product in products %}
                 <div class="list-item">
-                    <a href="#">
-                        <img src="/media/{{ product.image }}" alt="product">
+                    <a href="{% url 'basket:add' product.pk %}">
+                        <img src="/media/{{ product.image }}" alt="product.short_desc">
                         <div class="text">
                             <h4>{{ product.name }}</h4>
                             <p>{{ product.description }}</p>
